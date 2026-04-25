@@ -478,9 +478,7 @@
         }
         // ========================== SHOW RESULT
         function showResult() {
-    quiz.innerHTML = "";
     submitBtn.style.display = "none";
-    quiz.style.display = "none";
 
     let message = "";
 
@@ -492,11 +490,13 @@
         message = "😅 Better luck next time!";
     }
 
-    resultDiv.innerHTML = `
-        <h3>Your Score: ${score} / ${quizData.length}</h3>
-        <p style="font-size:18px; font-weight:bold; margin-top:10px;">
-            ${message}
-        </p>
+    quiz.innerHTML = `
+        <div style="text-align:center;">
+            <h3>Your Score: ${score} / ${quizData.length}</h3>
+            <p style="font-size:18px; font-weight:bold; margin-top:10px;">
+                ${message}
+            </p>
+        </div>
     `;
 
     setTimeout(() => {
