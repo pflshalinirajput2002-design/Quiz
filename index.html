@@ -478,17 +478,30 @@
         }
         // ========================== SHOW RESULT
         function showResult() {
-            quiz.innerHTML = "";
-            submitBtn.style.display = "none";
+    quiz.innerHTML = "";
+    submitBtn.style.display = "none";
 
-            resultDiv.innerHTML = `
-                    <h3>Your Score: ${score} / ${quizData.length}</h3>
-                `;
+    let message = "";
 
-            setTimeout(() => {
-                quizModal.hide();
-            }, 2000);
-        }
+    if (score === quizData.length) {
+        message = "🎉 Congratulations! Perfect Score!";
+    } else if (score >= quizData.length / 2) {
+        message = "👍 Good Job!";
+    } else {
+        message = "😅 Better luck next time!";
+    }
+
+    resultDiv.innerHTML = `
+        <h3>Your Score: ${score} / ${quizData.length}</h3>
+        <p style="font-size:18px; font-weight:bold; margin-top:10px;">
+            ${message}
+        </p>
+    `;
+
+    setTimeout(() => {
+        quizModal.hide();
+    }, 3000);
+}
 
         // ==========================SUBMIT BUTTON
         submitBtn.addEventListener('click', () => {
