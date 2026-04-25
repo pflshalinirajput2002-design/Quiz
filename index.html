@@ -477,9 +477,8 @@
             });
         }
         // ========================== SHOW RESULT
-function showResult() {
+        function showResult() {
     submitBtn.style.display = "none";
-    quiz.style.display = "none";
 
     let message = "";
 
@@ -498,11 +497,11 @@ function showResult() {
         </p>
     `;
 
+    // Auto close after 3 sec
     setTimeout(() => {
         quizModal.hide();
     }, 3000);
 }
-
 
 
         // ==========================SUBMIT BUTTON
