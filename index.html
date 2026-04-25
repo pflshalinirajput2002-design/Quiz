@@ -477,8 +477,11 @@
             });
         }
         // ========================== SHOW RESULT
-        function showResult() {
+function showResult() {
+    quiz.innerHTML = "";
+    const quiz = document.getElementById('quiz');
     submitBtn.style.display = "none";
+    quiz.style.display = "none";
 
     let message = "";
 
@@ -490,19 +493,19 @@
         message = "😅 Better luck next time!";
     }
 
-    quiz.innerHTML = `
-        <div style="text-align:center;">
-            <h3>Your Score: ${score} / ${quizData.length}</h3>
-            <p style="font-size:18px; font-weight:bold; margin-top:10px;">
-                ${message}
-            </p>
-        </div>
+    resultDiv.innerHTML = `
+        <h3>Your Score: ${score} / ${quizData.length}</h3>
+        <p style="font-size:18px; font-weight:bold; margin-top:10px;">
+            ${message}
+        </p>
     `;
 
     setTimeout(() => {
         quizModal.hide();
     }, 3000);
 }
+
+
 
         // ==========================SUBMIT BUTTON
         submitBtn.addEventListener('click', () => {
