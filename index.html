@@ -478,8 +478,6 @@
         }
         // ========================== SHOW RESULT
 function showResult() {
-    quiz.innerHTML = "";
-    const quiz = document.getElementById('quiz');
     submitBtn.style.display = "none";
     quiz.style.display = "none";
 
@@ -493,7 +491,7 @@ function showResult() {
         message = "😅 Better luck next time!";
     }
 
-    resultDiv.innerHTML = `
+    quiz.innerHTML = `
         <h3>Your Score: ${score} / ${quizData.length}</h3>
         <p style="font-size:18px; font-weight:bold; margin-top:10px;">
             ${message}
